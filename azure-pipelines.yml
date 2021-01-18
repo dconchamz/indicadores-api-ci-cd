@@ -20,8 +20,8 @@ steps:
   displayName: 'npm install'
 
 - script: npm test
-- task: PublishTestResults@2
-  condition: succeededOrFailed()
+- task: PublishCodeCoverageResults@1
   inputs:
-    testRunner: JUnit
-    testResultsFiles: '**/TEST-RESULTS.xml'
+    codeCoverageTool: 'Cobertura'
+    summaryFileLocation: 'tests/__coverage__/cobertura-coverage.xml'
+  displayName: 'Publish Code Coverage'
