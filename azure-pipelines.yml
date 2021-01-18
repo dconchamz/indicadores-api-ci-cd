@@ -19,4 +19,4 @@ steps:
     npm install
   displayName: 'npm install'
 
-- script: npm test
+- script: npm test  --reporter jest-junit-reporter
