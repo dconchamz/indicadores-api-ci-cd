@@ -1,5 +1,4 @@
 const axios = require('axios')
-const {getIndicator}= require('../src/services/indicator')
 jest.mock('axios', () => jest.fn());
 
 describe("test general", () => {
