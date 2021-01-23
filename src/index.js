@@ -1,8 +1,7 @@
 const express = require('express'); 
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const axios = require('axios');
-
+const routes = require('./routes');
 const app = express();
 // configure bodyparser and cors
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -10,6 +9,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const port = process.env.PORT || '3000';
+
+routes(app);
+//http://localhost:3000?indicator=dolar
 
 // uf, ,ivp, dolar, dolar_intercambio , euro, ipc, utm, imacec, tpm, libra_cobre, tasa_desempleo, bitcoin
  function getIndicator(indicator) {
