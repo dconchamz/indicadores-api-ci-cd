@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "test": "jest --maxWorkers=3 --colors --coverage",
-    "coverage": "nyc --temp-dir=./report/raw --reporter=cobertura --report-dir=./report jest --coverage --coverageReporters=cobertura"
+    "coverage": "jest --coverage --coverageReporters=cobertura"
   },
   "repository": {
     "type": "git",
