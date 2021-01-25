@@ -1,4 +1,4 @@
-const express = require('express'); 
+const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const routes = require('./routes');
@@ -13,29 +13,6 @@ const port = process.env.PORT || '3000';
 routes(app);
 //http://localhost:3000?indicator=dolar
 
-// uf, ,ivp, dolar, dolar_intercambio , euro, ipc, utm, imacec, tpm, libra_cobre, tasa_desempleo, bitcoin
- function getIndicator(indicator) {
-  return  axios.get(`https://mindicador.cl/api/${indicator}`);
-  
-}
-
-app.get('/', (req, res) => {
-  const {indicator}= req.query
-  getIndicator(indicator).then(indicator=>{
-    const {codigo, nombre, unidad_medida}= indicator.data
-    res.json({codigo, 
-      nombre, 
-      unidad_medida, 
-      fecha: indicator.data.serie[0].fecha,
-      valor: indicator.data.serie[0].valor
-    });
-  })
-  
-  
-});
-
 app.listen(port, () => {
-
-console.log(`listening at http://localhost:${port}`);
-
+  console.log(`listening at http://localhost:${port}`);
 });

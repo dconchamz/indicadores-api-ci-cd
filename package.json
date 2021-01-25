@@ -6,8 +6,8 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "jest --maxWorkers=3 --colors --coverage",
-    "coverage": "jest --coverage --coverageReporters=cobertura"
+    "test": "jest --maxWorkers=3 --colors --coverage --verbose=true",
+    "coverage": "jest --coverage --coverageReporters=cobertura --verbose=true"
   },
   "repository": {
     "type": "git",
@@ -27,7 +27,6 @@
     "nodemon": "^2.0.7"
   },
   "devDependencies": {
-    "jest": "^26.6.3",
-    "nyc": "^15.1.0"
+    "jest": "^26.6.3"
   }
 }
